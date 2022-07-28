@@ -1,7 +1,9 @@
-import './css/App.css';
 import React from 'react';
-import LogoComp from './components/LogoComp';
-import Pokemons from './components/Pokemons';
+import LogoComp from './components/LogoComponent/LogoComp';
+import Pokemons from './components/PokemonsComponent/Pokemons';
+import './css/App.css';
+import './constants/CssConsts.css'
+import Search from './components/SearchComponent/Search';
 
 function App() {
   return (
@@ -11,9 +13,8 @@ function App() {
             <LogoComp />
           </div>
         </header>
-        <div>
+          <Search/>
           <Pokemons />
-        </div>
       </div>
 
   );

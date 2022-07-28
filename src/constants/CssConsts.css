@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+    --bodyFont: 'Roboto', sans-serif;
+    --headersFontSize: medium;
+    --body_bg: #FCFCFC;
+    --cards_bg: #FFFFFF;
+    --cards_text: #373299;
+    --search_btn_bg: #373299;
+    --search_btn_text: #F7F7F9;
+    --search_input_border: #020166;
+    --search_input_bg: #F7F7F9;
+    --load_btn_text: #373299;
+    --load_btn_bg: transparent;
+    --load_btn_border: #373299;
+}

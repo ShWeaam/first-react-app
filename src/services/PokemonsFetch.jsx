@@ -1,15 +1,16 @@
 import axios from "axios";
+import { POKEMON_GET_REQUEST_API } from "../constants/fileWithConstants";
 
 
 export default class PokemonsFetch {
 
-    static fetchAll = async (fetchURL) => {
+    static fetchAll = async (offset) => {
         let result = {
             data: null,
             error: null
         };
 
-        await axios.get(process.env.REACT_APP_POKEMON_API_URL + fetchURL)
+        await axios.get(POKEMON_GET_REQUEST_API + offset)
             .then(resp => {
                 if (resp.status === 200) {
                     result.data = resp.data;

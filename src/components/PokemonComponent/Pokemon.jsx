@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
-import pokemonService from '../services/PokemonsFetch';
+import { LEADING_ZEROS_AMOUNT } from "../../constants/fileWithConstants";
+import { capitalizeFirstLetter, getNumberWithLeadingZeros } from "../../helpers/helpingFunctions";
+import pokemonService from '../../services/PokemonsFetch';
+import PokemonImg from "../PokemonImg/PokemonImg";
+import './pokemonComponent.css'
+import '../../constants/CssConsts.css'
 
 export default function Pokemon(props) {
-  const [pokiObj, setPokiObj] = useState();
   const [pokiName, setPokiName] = useState(props.temp.name);
   const [pokiImg, setPokiImg] = useState('');
   const [pokiID, setPokiID] = useState('');
@@ -31,15 +35,13 @@ export default function Pokemon(props) {
 
 
   return (
-    <div className="pokemonCard">
-      <div className="pokemonImgFrame">
-        <img className="pokemonImg" src={pokiImg} alt="Pokemon Image" />
+    <div className="pokemonCard" id={pokiName} key={pokiName}>
+      <div className="PokemonID" id={pokiID}>
+        #{getNumberWithLeadingZeros(pokiID, LEADING_ZEROS_AMOUNT)}
       </div>
+      <PokemonImg pokemonImgUrl={pokiImg} />
       <div className="pokemonInfo">
-        <ul className="pokemonList">
-          <li>{pokiName}</li>
-          <li>{pokiID}</li>
-        </ul>
+        {capitalizeFirstLetter(pokiName)}
       </div>
     </div>
   )

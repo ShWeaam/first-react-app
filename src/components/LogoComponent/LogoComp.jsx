@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../media/image4.svg';
+import logo from '../../media/pokedexLogo.svg';
+import './logo.css'
 
 export default function LogoComp() {
     return (

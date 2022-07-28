@@ -1,0 +1,24 @@
+.pokemonsWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 5% 5% 0 5%;
+	width: 90%;
+	margin: auto;
+}
+
+.loadMoreBtnFrame {
+	width: 20%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+}
+
+.loadMoreBtn {
+	border-radius: 5px;
+	width: 100%;
+	color: var(--load_btn_text);
+	background-color: var(--load_btn_bg);
+	border-color: var(--load_btn_border);
+}
