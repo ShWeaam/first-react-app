@@ -12,6 +12,10 @@
 	padding: 2%;
 }
 
+.pokemonCard :hover{
+	cursor: pointer;
+}
+
 .hidden{
 	display: none;
 	order: 1;

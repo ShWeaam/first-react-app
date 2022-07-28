@@ -1,4 +1,3 @@
-import { LEADING_ZEROS_AMOUNT } from '../constants/fileWithConstants';
 
 export function getNumberWithLeadingZeros(number, LEADING_ZEROS_AMOUNT) {
     return String(number).padStart(LEADING_ZEROS_AMOUNT, '0')

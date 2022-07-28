@@ -12,7 +12,6 @@ export default class PokemonsFetch {
 
         await axios.get(POKEMON_GET_REQUEST_API + offset)
             .then(resp => {
-                console.log(POKEMON_GET_REQUEST_API + offset);
                 if (resp.status === 200) {
                     result.data = resp.data;
                 }
