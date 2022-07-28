@@ -4,15 +4,13 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import './searchComponent.css'
 import '../../constants/CssConsts.css'
 
-
-
 export default function Search() {
 
     const [searchQuery, setSearchQuery] = useState("");
     const [cards, setCards] = useState([]);
 
     const searchIcon = <FontAwesomeIcon icon={faSearch} className="searchIcon" />
-
+    
     useEffect(() => {
         setCards(document.getElementsByClassName('pokemonCard'));
     }, [searchQuery]);
@@ -36,6 +34,7 @@ export default function Search() {
     function hideCard(card){
         card.classList.add('hidden');
     }
+    
     function searchForQuery(searchQRY) {
         Array.from(cards).forEach((card) => {
             card.id.includes(searchQRY) ? showCard(card) : hideCard(card);

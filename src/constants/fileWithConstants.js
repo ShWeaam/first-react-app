@@ -1,6 +1,6 @@
 export const CARDS_TO_FETCH = 12
 export const LEADING_ZEROS_AMOUNT = 3
-export const POKEMON_GET_REQUEST_API = "https://pokeapi.co/api/v2/pokemon?limit="+CARDS_TO_FETCH+"offset="
+export const POKEMON_GET_REQUEST_API = "https://pokeapi.co/api/v2/pokemon?limit="+CARDS_TO_FETCH+"&offset="
 
 export const POKEMON_TYPE_COLORS = {
     normal: '#A8A77A',

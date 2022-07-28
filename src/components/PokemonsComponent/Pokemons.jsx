@@ -8,35 +8,30 @@ import { CARDS_TO_FETCH } from "../../constants/fileWithConstants";
 
 
 export default function Pokemons() {
-    const [fetchedCards, setFetchedCards] = useState(0);
+    const [fetchedCardsOffset, setFetchedCardsOffset] = useState(0);
     const [pokemons, setPokemons] = useState([]);
-    const fetchRequired = useRef(0);
-//    {pokemon.abilities[0].ability.name}
+    const fetchRequired = useRef(true);
 
     useEffect(() => {
-        console.log("in HEREEEE");
-        console.log(fetchRequired.current);
-        if ((fetchRequired.current % 2) == 0) {
-            pokemonService.fetchAll(fetchedCards)
+        if (fetchRequired.current) {
+            fetchRequired.current = false;
+            pokemonService.fetchAll(fetchedCardsOffset)
                 .then(result => {
-                    if (result.error) {
-                        Error(result.error);
-                        return;
-                    }
+                    // if (result.error) {
+                    //     Error(result.error);
+                    //     return;
+                    // }
                     result.data.results.forEach(pokemonInfo => {
                         let pokemon = { "name": pokemonInfo.name, "url": pokemonInfo.url };
                         setPokemons(pokemons => [...pokemons, pokemon]);
                     });
                 });
         }
-        return () => {
-            fetchRequired.current++;
-        }
-    }, [fetchedCards]);
+    }, [fetchedCardsOffset]);
 
     const loadMorePokemons = () => {
         fetchRequired.current = true;
-        setFetchedCards(fetchedCards + CARDS_TO_FETCH);
+        setFetchedCardsOffset(fetchedCardsOffset + CARDS_TO_FETCH);
     }
 
     return (
@@ -52,4 +47,5 @@ export default function Pokemons() {
             </div>
         </div>
     )
+
 }
