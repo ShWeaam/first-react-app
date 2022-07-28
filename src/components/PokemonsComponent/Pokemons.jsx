@@ -17,10 +17,10 @@ export default function Pokemons() {
             fetchRequired.current = false;
             pokemonService.fetchAll(fetchedCardsOffset)
                 .then(result => {
-                    // if (result.error) {
-                    //     Error(result.error);
-                    //     return;
-                    // }
+                    if (result.error) {
+                        Error(result.error);
+                        return;
+                    }
                     result.data.results.forEach(pokemonInfo => {
                         let pokemon = { "name": pokemonInfo.name, "url": pokemonInfo.url };
                         setPokemons(pokemons => [...pokemons, pokemon]);

@@ -23,37 +23,31 @@ export const POKEMON_TYPE_COLORS = {
     fairy: '#D685AD',
 };
 
-export const STATS_TO_SHOW=[]
+export const STATS_TO_SHOW = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed']
 
-export const REQUIRED_STATS = [
+export const PRINT_LIKE_THIS = [
     {
         statName: 'hp',
-        printAs: 'HP',
-        statLevel: '',
+        printAs: 'HP'
     },
     {
         statName: 'attack',
-        printAs: 'Attack',
-        statLevel: '',
+        printAs: 'Attack'
     },
     {
         statName: 'defense',
-        printAs: 'Defense',
-        statLevel: '',
+        printAs: 'Defense'
     },
     {
         statName: 'special-attack',
-        printAs: 'Special Atk',
-        statLevel: '',
+        printAs: 'Special Atk'
     },
     {
         statName: 'special-defense',
-        printAs: 'Special Def',
-        statLevel: '',
+        printAs: 'Special Def'
     },
     {
         statName: 'speed',
-        printAs: 'Speed',
-        statLevel: '',
+        printAs: 'Speed'
     },
 ]
